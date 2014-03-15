@@ -1,0 +1,73 @@
+<html data-ng-app="smart">
+    
+    <head>
+        <style>
+            body {
+                font-family: arial;
+                font-size: 15px;
+            }
+            
+            span {
+                background-color: green;
+                color: white;
+                padding: 5px;
+                display: block;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+            
+            ul {
+                padding: 10px 0px 0px 0px;
+                margin: 0px;
+                list-style-type: none;
+            }
+            
+            #pager li {
+                float: left;
+                color: white;
+                padding: 5px 12px;
+                margin: 3px;
+                background-color: blue;
+                cursor: pointer;
+            }
+            
+            div.column {
+                float: left;
+                padding-right: 100px;
+            }
+        </style>
+    </head>
+    
+    <body data-ng-controller="smartController">
+        
+        <div class="column">
+            <span>Select page:</span>
+            <ul id="pager">
+                <li data-ng-click="list(1)">1</li>
+                <li data-ng-click="list(2)">2</li>
+                <li data-ng-click="list(3)">3</li>
+                <li data-ng-click="list(4)">4</li>
+                <li data-ng-click="list(5)">5</li>
+            </ul>
+        </div>
+        
+        <div class="column">
+            <span>Items:</span>
+            <ul>
+                <li data-ng-repeat="item in items" data-ng-bind="item"></li>
+            </ul>
+        </div>
+        
+        <div class="column">
+            <span>Log:</span>
+            <ul id="log">
+                <li data-ng-repeat="log in logs" data-ng-bind="log"></li>
+            </ul>
+        </div>
+        
+        <script src="lib/angular/angular.min.js"></script>
+        <script src="app.js"></script>
+        
+    </body>
+    
+</html>
