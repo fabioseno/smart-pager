@@ -92,16 +92,3 @@ angular.module('smart').controller('smartController', ['$scope', '$q', '$timeout
     $scope.list($scope.currentPage);
     
 }]);
-
-angular.module('smart').directive('smart', function () {
-    'use strict';
-    
-    return {
-        restrict: 'AE',
-        
-        link: function (scope, element, attrs) {
-            
-        }
-    };
-    
-});
