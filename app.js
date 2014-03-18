@@ -51,11 +51,10 @@ angular.module('smart').factory('pageBuffer',  ['$q', '$timeout', function ($q, 
 }]);
 
 
-angular.module('smart').controller('smartController', ['$scope', '$q', '$timeout', 'pageBuffer', 'customDataSource', function ($scope, $q, $timeout, PageBuffer, customDataSource) {
+angular.module('smart').controller('smartController', ['$scope', 'pageBuffer', 'customDataSource', function ($scope, PageBuffer, customDataSource) {
     'use strict';
     
     var pageSize = 5,
-        bufferedPages = {},
         bufferFactory = new PageBuffer(pageSize, 1);
     
     $scope.items = [];
