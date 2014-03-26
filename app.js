@@ -29,9 +29,9 @@ angular.module('smart').factory('pageBuffer',  ['$q', '$timeout', function ($q, 
                         defer.resolve(result.items);
                     });
                 } else {
-                    $timeout(function () {
-                        defer.resolve(bufferedPages['page' + currentPage]);
-                    });
+                    //$timeout(function () {
+                        $q.when(defer.resolve(bufferedPages['page' + currentPage]));
+                    //});
                 }
                 
                 // demais páginas
